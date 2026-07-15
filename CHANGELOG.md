@@ -1,8 +1,17 @@
-## [unreleased]
+## [1.0.3] - 2026-07-15
+
+### 🐛 Bug Fixes
+
+- *(ci)* Moved the git-cliff to the end of the release.yml
+## [1.0.2] - 2026-07-15
 
 ### 🐛 Bug Fixes
 
 - *(ci)* Removed manually adding changelog.md
+
+### 📚 Documentation
+
+- *(changelog)* Release v1.0.2
 ## [1.0.1] - 2026-07-15
 
 ### 🚀 Features
