@@ -38,9 +38,7 @@ jobs:
 
       - name: Generate CHANGELOG
         run: |
-          git-cliff \
-            --tag v${{ steps.version.outputs.version }} \
-            --output CHANGELOG.md
+          git-cliff --output CHANGELOG.md
 
       - name: Commit CHANGELOG
         run: |
