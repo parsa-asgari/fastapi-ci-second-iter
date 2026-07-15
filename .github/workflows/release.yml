@@ -66,14 +66,6 @@ jobs:
           git tag v${{ steps.version.outputs.version }}
           git push origin v${{ steps.version.outputs.version }}
 
-      - name: Create GitHub Release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release create \
-            v${{ steps.version.outputs.version }} \
-            --title "v${{ steps.version.outputs.version }}" \
-            --notes-file CHANGELOG.md
 
       - name: Install git-cliff
         uses: kenji-miyake/setup-git-cliff@v2
@@ -95,3 +87,12 @@ jobs:
           git add CHANGELOG.md
           git commit --no-verify -m "docs(changelog): release v${{ steps.version.outputs.version }}"
           git push
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create \
+            v${{ steps.version.outputs.version }} \
+            --title "v${{ steps.version.outputs.version }}" \
+            --notes-file CHANGELOG.md
