@@ -48,6 +48,11 @@ async def test():
     return {"output": "success"}
 
 
+@app.get("/test2")
+async def test2():
+    return {"output": "success2"}
+
+
 @app.get("/items/{item_id}")
 async def read_item(item_id: int):
     item_quantity = items.get(item_id)
