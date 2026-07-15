@@ -1,3 +1,12 @@
+## [1.0.4] - 2026-07-15
+
+### 🐛 Bug Fixes
+
+- *(ci)* Moved the create github release to the bottom
+
+### 📚 Documentation
+
+- *(changelog)* Release v1.0.3
 ## [1.0.3] - 2026-07-15
 
 ### 🐛 Bug Fixes
