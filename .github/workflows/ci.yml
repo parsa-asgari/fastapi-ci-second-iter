@@ -45,7 +45,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - uses: ./.github/workflows/actions/setup-python
+            - uses: ./.github/actions/setup-python
               with:
                   python-version: ${{ env.PYTHON_VERSION }}
 
@@ -72,7 +72,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - uses: ./.github/workflows/actions/setup-python
+            - uses: ./.github/actions/setup-python
               with:
                 python-version: ${{ env.PYTHON_VERSION }}
 
