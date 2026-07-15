@@ -1,0 +1,31 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/psf/black
+    rev: 26.5.1
+    hooks:
+      - id: black
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: Run pytest
+        entry: venv/bin/python -m pytest .
+        language: system
+        types: [python]
+
+      - id: ruff
+        name: Run ruff
+        entry: venv/bin/python -m ruff check .
+        language: system
+        types: [python]
+
+      - id: black
+        name: Run black
+        entry: venv/bin/python -m black --check .
+        language: system
+        types: [python]

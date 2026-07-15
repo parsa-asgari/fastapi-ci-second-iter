@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  app:
+    image: fastapi-ci-cd:1.0.1
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=${APP_ENV:-production}
+    restart: unless-stopped
+
+# Add more services as needed
+# networks:
+#   default:
+#     driver: bridge
