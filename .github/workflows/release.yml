@@ -33,26 +33,6 @@ jobs:
           minor_pattern: "^feat"
           version_format: "${major}.${minor}.${patch}"
 
-      - name: Install git-cliff
-        uses: kenji-miyake/setup-git-cliff@v2
-
-      - name: Generate CHANGELOG
-        run: |
-          git-cliff --output CHANGELOG.md
-
-      - name: Commit CHANGELOG
-        run: |
-          if git diff --quiet; then
-            echo "No changelog changes."
-            exit 0
-          fi
-
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-          git add CHANGELOG.md
-          git commit --no-verify -m "docs(changelog): release v${{ steps.version.outputs.version }}"
-          git push
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -94,3 +74,24 @@ jobs:
             v${{ steps.version.outputs.version }} \
             --title "v${{ steps.version.outputs.version }}" \
             --notes-file CHANGELOG.md
+
+      - name: Install git-cliff
+        uses: kenji-miyake/setup-git-cliff@v2
+
+      - name: Generate CHANGELOG
+        run: |
+          git-cliff --output CHANGELOG.md
+
+      - name: Commit CHANGELOG
+        run: |
+          if git diff --quiet; then
+            echo "No changelog changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add CHANGELOG.md
+          git commit --no-verify -m "docs(changelog): release v${{ steps.version.outputs.version }}"
+          git push
