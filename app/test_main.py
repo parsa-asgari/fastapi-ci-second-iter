@@ -21,7 +21,7 @@ async def test_status():
     ) as ac:
         response = await ac.get("/status")
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+    assert response.json() == {"status": "1"}
 
 
 @pytest.mark.anyio
