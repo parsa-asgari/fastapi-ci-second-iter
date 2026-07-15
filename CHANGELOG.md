@@ -2,6 +2,21 @@
 
 ### 🐛 Bug Fixes
 
+- *(ci)* Removed manually adding changelog.md
+## [1.0.1] - 2026-07-15
+
+### 🚀 Features
+
+- [**breaking**] Changed the behavior of status route
+## [0.0.6] - 2026-07-15
+
+### 🐛 Bug Fixes
+
+- *(ci)* Fixed adding changelog.md to git
+## [0.0.5] - 2026-07-15
+
+### 🐛 Bug Fixes
+
 - *(ci)* Fixed git-cliff not outputting anything
 ## [0.0.4] - 2026-07-15
 
